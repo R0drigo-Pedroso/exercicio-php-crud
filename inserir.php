@@ -1,7 +1,7 @@
 <?php
 	if(isset($_POST['inserir'])) {
 		require_once "src/funcoes-alunos.php";
-
+		
 		$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 		$primeiraNota = filter_input(INPUT_POST, 'primeiraNota', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 		$segundaNota = filter_input(INPUT_POST, 'segundaNota', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
@@ -13,8 +13,6 @@
 		} else {
 			$resultado = "Reprovado";
 		}
-
-		$situacao = $resultado;
 
 		header("Location:visualizar.php");
 	}
