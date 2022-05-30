@@ -1,8 +1,6 @@
 <?php
-	require_once "src/funcoes-alunos.php";
-
-
-	if (isset($_POST['inserir'])) {
+	if(isset($_POST['inserir'])) {
+		require_once "src/funcoes-alunos.php";
 
 		$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 		$primeiraNota = filter_input(INPUT_POST, 'primeiraNota', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
@@ -17,6 +15,8 @@
 		}
 
 		$situacao = $resultado;
+
+		header("Location:visualizar.php");
 	}
 ?>
 
@@ -36,14 +36,20 @@
     <p>Utilize o formulário abaixo para cadastrar um novo aluno.</p>
 
 	<form action="#" method="post">
-	    <p><label for="nome">Nome:</label>
-	    <input type="text" id="nome" required></p>
+	    <p>
+			<label for="nome">Nome:</label>
+	    	<input type="text" name="nome" id="nome" required>
+		</p>
         
-      <p><label for="primeira">Primeira nota:</label>
-	    <input type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
+      	<p>
+			<label for="primeira">Primeira nota:</label>
+	    	<input type="number" name="primeira" id="primeira" step="0.1" min="0.0" max="10" required>
+		</p>
 	    
-	    <p><label for="segunda">Segunda nota:</label>
-	    <input type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
+	    <p>
+			<label for="segunda">Segunda nota:</label>
+	    	<input type="number" name="segunda"  id="segunda" step="0.1" min="0.0" max="10" required>
+		</p>
 	    
       <button type="submit" name="inserir">Cadastrar aluno</button>
 	</form>
