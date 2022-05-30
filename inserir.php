@@ -1,3 +1,25 @@
+<?php
+	require_once "src/funcoes-alunos.php";
+
+
+	if (isset($_POST['inserir'])) {
+
+		$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+		$primeiraNota = filter_input(INPUT_POST, 'primeiraNota', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$segundaNota = filter_input(INPUT_POST, 'segundaNota', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+
+		$media = ($primeiraNota + $segundaNota) / 2;
+
+		if ($media >= 7) {
+			$resultado = "Aprovado";
+		} else {
+			$resultado = "Reprovado";
+		}
+
+		$situacao = $resultado;
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,7 +45,7 @@
 	    <p><label for="segunda">Segunda nota:</label>
 	    <input type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
 	    
-      <button>Cadastrar aluno</button>
+      <button type="submit" name="inserir">Cadastrar aluno</button>
 	</form>
 
     <hr>
