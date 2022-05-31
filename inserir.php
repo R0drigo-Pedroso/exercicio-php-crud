@@ -7,6 +7,8 @@
 		$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 		$primeiraNota = filter_input(INPUT_POST, 'primeiraNota', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 		$segundaNota = filter_input(INPUT_POST, 'segundaNota', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$media = filter_input(INPUT_POST, 'media', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$situacao = filter_input(INPUT_POST, 'situacao', FILTER_SANITIZE_SPECIAL_CHARS);
 
 		$media = ($primeiraNota + $segundaNota) / 2;
 
@@ -17,6 +19,10 @@
 		}
 
 		$situacao = $resultado;
+
+		inserirAluno($conexao, $id, $nome, $primeiraNota, $segundaNota, $media, $situacao);
+
+		header("Location:visualizar.php");
 	}
 ?>
 
@@ -37,13 +43,13 @@
 
 	<form action="#" method="post">
 	    <p><label for="nome">Nome:</label>
-	    <input type="text" id="nome" required></p>
+	    <input type="text" name="nome" id="nome" required></p>
         
-      <p><label for="primeira">Primeira nota:</label>
-	    <input type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
+      <p><label for="primeiraNota">Primeira nota:</label>
+	    <input type="number" name="primeiraNota" id="primeira" step="0.1" min="0.0" max="10" required></p>
 	    
-	    <p><label for="segunda">Segunda nota:</label>
-	    <input type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
+	    <p><label for="segundaNota">Segunda nota:</label>
+	    <input type="number" name="segundaNota" id="segunda" step="0.1" min="0.0" max="10" required></p>
 	    
       <button type="submit" name="inserir">Cadastrar aluno</button>
 	</form>
