@@ -1,5 +1,7 @@
 <?php
-    
+    require_once '../exercicio-php-crud/src/funcoes-alunos.php';
+
+    $visualizarAlunos = visualizarAlunos ($conexao)
 ?>
 
 <!DOCTYPE html>
@@ -27,12 +29,26 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                
-            </tr>
-            <tr>
-                
-            </tr>
+            <?php foreach ($visualizarAlunos as $visualizarAluno){ ?>
+                 <tr>
+                    <td><?=$visualizarAluno["nome"]?></td>           
+                    <td><?=$visualizarAluno["primeiraNota"]?></td>
+                    <td><?=$visualizarAluno["segundaNota"]?></td>           
+                    <td><?=$visualizarAluno["media"]?></td>
+                    <td><?=$visualizarAluno["situacao"]?></td>
+
+                    <!-- botões para atualizar e excluir -->
+                    <td>
+                        <a href="atualizar.php?id=<?=$visualizarAluno["id"]?>"> <!-- Criação de link dinamico  -->
+                            Atualizar
+                        </a>
+                    </td>
+
+                    <td>
+                        <a class="excluir" href="excluir.php?id=<?=$visualizarAluno["id"]?>">Excluir</a>
+                    </td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
 

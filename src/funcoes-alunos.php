@@ -2,6 +2,7 @@
 
 require_once 'conexao.php';
 
+// Função para inserir um aluno
     function cadastraAluno (PDO $conexao, string $nome, float $primeiraNota, float $segundaNota, float $media, string $situacao) {
         $sql ="INSERT INTO alunos (nome, primeiraNota, segundaNota, media, situacao) VALUES (:nome, :primeiraNota, :segundaNota, :media, :situacao)";
     
@@ -17,5 +18,21 @@ require_once 'conexao.php';
             $consulta->execute();
         }catch (Exception $error) {
             echo $error->getMessage();
+        }
+    }
+
+    // Função visualizar Alunos
+    function visualizarAlunos(PDO $conexao):array {
+        $sql = "SELECT id, nome, primeiraNota, segundaNota, media, situacao FROM alunos";
+
+        try {
+            $consulta = $conexao->prepare($sql);
+            $consulta->execute();
+
+            $alunos = $consulta->fetchAll(PDO::FETCH_ASSOC);
+            return $alunos;
+            
+        }catch (Exception $error) {
+            die ("Erro na consulta ao banco de dados: " .$error -> getMessage());
         }
     }
