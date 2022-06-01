@@ -51,9 +51,9 @@ require_once 'conexao.php';
     }
 
 
-    // Função para editar aluno
+    // Atualizar dados no banco de dados - UPDATE alunos
     function lerUmAluno(PDO $conexao, int $id):array {
-        $sql = "SELECT id, nome, primeiraNota, segundaNota, media, situacao FROM produtos WHERE id = :id";
+        $sql = "SELECT id, nome, primeiraNota, segundaNota, media, situacao FROM alunos WHERE id = :id";
 
         try {
             $consulta = $conexao->prepare($sql);
@@ -66,4 +66,24 @@ require_once 'conexao.php';
         }
 
         return $resultado;
+    }
+
+    // Atualizar Alunos
+    function atualizarAluno(PDO $conexao, int $id, string $nome, float $primeiraNota, float $segundaNota, float $media, string $situacao):void {
+        $sql = "UPDATE alunos SET nome = :nome, primeiraNota = :primeiraNota, segundaNota = :segundaNota, media = :media, situacao = :situacao WHERE id = :id";
+
+        try {
+            $consulta = $conexao->prepare($sql);
+
+            $consulta->bindParam(':id', $id, PDO::PARAM_INT);
+            $consulta->bindParam(':nome', $nome, PDO::PARAM_STR);
+            $consulta->bindParam(':primeiraNota', $primeiraNota, PDO::PARAM_STR);
+            $consulta->bindParam(':segundaNota', $segundaNota, PDO::PARAM_STR);
+            $consulta->bindParam(':media', $media, PDO::PARAM_STR);
+            $consulta->bindParam(':situacao', $situacao, PDO::PARAM_STR);
+
+            $consulta->execute();
+        } catch (Exception $error) {
+            die ("Erro na consulta ao banco de dados: " .$error -> getMessage());
+        }
     }
