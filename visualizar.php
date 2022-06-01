@@ -26,6 +26,7 @@
                 <th>Segunda Nota</th>
                 <th>Media</th>
                 <th>Situação</th>
+                <th colspan="2">Ações</th>
             </tr>
         </thead>
         <tbody>
