@@ -6,19 +6,22 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
-<link href="css/style.css" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
+        
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        
+        <link href="css/style.css" rel="stylesheet">
+    </head>
 <body>
 <div class="container">
     <h1>Lista de alunos</h1>
     <hr>
     <p><a href="inserir.php">Inserir novo aluno</a></p>
 
-    <table border="1">
+    <table id="rborder" class="table table-primary table-hover text-center  shadow-lg p-3 mb-5 bg-body rounded">
         <thead>
             <tr>
                 <th>Nome</th>
