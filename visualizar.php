@@ -64,5 +64,7 @@ as páginas de atualização e exclusão. -->
     <p><a href="index.php">Voltar ao início</a></p>
 </div>
 
+<script src="js/confirmar.js"></script>
+
 </body>
 </html>
