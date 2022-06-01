@@ -36,3 +36,18 @@ require_once 'conexao.php';
             die ("Erro na consulta ao banco de dados: " .$error -> getMessage());
         }
     }
+
+    // Função para atualizar aluno
+
+    // Função para deletar aluno
+    function deletarAluno(PDO $conexao, int $id):void {
+        $sql = "DELETE FROM alunos WHERE id = :id";
+
+        try {
+            $consulta = $conexao->prepare($sql);
+            $consulta->bindParam(':id', $id, PDO::PARAM_INT);
+            $consulta->execute();
+        }catch (Exception $error) {
+            die ("Erro na consulta ao banco de dados: " .$error -> getMessage());
+        }
+    }
