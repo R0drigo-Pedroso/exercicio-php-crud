@@ -37,8 +37,6 @@ require_once 'conexao.php';
         }
     }
 
-    // Função para atualizar aluno
-
     // Função para deletar aluno
     function deletarAluno(PDO $conexao, int $id):void {
         $sql = "DELETE FROM alunos WHERE id = :id";
@@ -50,4 +48,22 @@ require_once 'conexao.php';
         }catch (Exception $error) {
             die ("Erro na consulta ao banco de dados: " .$error -> getMessage());
         }
+    }
+
+
+    // Função para editar aluno
+    function lerUmAluno(PDO $conexao, int $id):array {
+        $sql = "SELECT id, nome, primeiraNota, segundaNota, media, situacao FROM produtos WHERE id = :id";
+
+        try {
+            $consulta = $conexao->prepare($sql);
+            $consulta->bindParam(":id", $id, PDO::PARAM_INT);
+            $consulta->execute();
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+
+        } catch(Exception $erro) {
+            die("Erro: " .$erro->getMessage());
+        }
+
+        return $resultado;
     }
