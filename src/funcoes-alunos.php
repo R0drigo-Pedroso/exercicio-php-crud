@@ -53,7 +53,7 @@ require_once 'conexao.php';
 
     // Atualizar dados no banco de dados - UPDATE alunos
     function lerUmAluno(PDO $conexao, int $id):array {
-        $sql = "SELECT id, nome, primeiraNota, segundaNota, media, situacao FROM alunos WHERE id = :id";
+        $sql = "SELECT nome, primeiraNota, segundaNota, media, situacao FROM alunos WHERE id = :id";
 
         try {
             $consulta = $conexao->prepare($sql);

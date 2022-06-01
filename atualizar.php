@@ -9,12 +9,22 @@
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
         $primeiraNota = filter_input(INPUT_POST, 'primeiraNota', FILTER_VALIDATE_FLOAT);
         $segundaNota = filter_input(INPUT_POST, 'segundaNota', FILTER_VALIDATE_FLOAT);
-        $media = filter_input(INPUT_POST, 'media', FILTER_VALIDATE_FLOAT);
-        $situacao = filter_input(INPUT_POST, 'situacao', FILTER_SANITIZE_SPECIAL_CHARS);
+        // $media = filter_input(INPUT_POST, 'media', FILTER_VALIDATE_FLOAT);
+        // $situacao = filter_input(INPUT_POST, 'situacao', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $media = ($primeiraNota + $segundaNota) / 2;
+
+		if($media >= 7){
+			$resultado = 'Aprovado';
+		}else{
+			$resultado = 'Reprovado';
+		}
+
+		$situacao = $resultado;
 
         atualizarAluno($conexao, $id, $nome, $primeiraNota, $segundaNota, $media, $situacao);
 
-        header('Location:atualizar.php');
+        header('Location:visualizar.php');
     }
 ?>
 
@@ -40,10 +50,10 @@
 	    <input value="<?=$listarAluno['nome']?>" type="text" name="nome" id="nome" required></p>
         
         <p><label for="primeira">Primeira nota:</label>
-	    <input value="<?=$listarAluno['primeiraNota']?>" name="primeira" type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
+	    <input value="<?=$listarAluno['primeiraNota']?>" name="primeiraNota" type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input value="<?=$listarAluno['segundaNota']?>" name="segunda" type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
+	    <input value="<?=$listarAluno['segundaNota']?>" name="segundaNota" type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição.
