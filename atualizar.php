@@ -40,10 +40,10 @@
 	    <input value="<?=$listarAluno['nome']?>" type="text" name="nome" id="nome" required></p>
         
         <p><label for="primeira">Primeira nota:</label>
-	    <input value="<?=$listarAluno['primeiraNota']?>" name="primeiraNota" type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
+	    <input value="<?=$listarAluno['primeiraNota']?>" name="primeira" type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input value="<?=$listarAluno['segundaNota']?>" name="segundaNota" type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
+	    <input value="<?=$listarAluno['segundaNota']?>" name="segunda" type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição.
