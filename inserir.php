@@ -1,20 +1,27 @@
 <?php
-	if(isset($_POST['inserir'])) {
-		require_once "src/funcoes-alunos.php";
-		
+	require_once '../exercicio-php-crud/src/funcoes-alunos.php';
+
+	if(isset ($_POST['inserir'])){
 		$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-		$primeiraNota = filter_input(INPUT_POST, 'primeiraNota', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-		$segundaNota = filter_input(INPUT_POST, 'segundaNota', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$primeiraNota = filter_input(INPUT_POST, 'primeira', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$segundaNota = filter_input(INPUT_POST, 'segunda', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$media = filter_input(INPUT_POST, 'media', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$situacao = filter_input(INPUT_POST, 'situacao', FILTER_SANITIZE_SPECIAL_CHARS);
 
 		$media = ($primeiraNota + $segundaNota) / 2;
 
-		if ($media >= 7) {
-			$resultado = "Aprovado";
-		} else {
-			$resultado = "Reprovado";
+		if($media >= 7){
+			$resultado = 'Aprovado';
+		}else{
+			$resultado = 'Reprovado';
 		}
 
-		header("Location:visualizar.php");
+		$situacao = $resultado;
+
+		cadastraAluno($conexao, $nome, $primeiraNota, $segundaNota, $media, $situacao);
+
+		header('Location: visualizar.php');
+
 	}
 ?>
 
@@ -49,9 +56,9 @@
 				<label for="segunda">Segunda nota:</label>
 				<input type="number" name="segunda"  id="segunda" step="0.1" min="0.0" max="10" required>
 			</p>
-		<?php { ?>	
+	
 			<button type="submit" name="inserir">Cadastrar aluno</button>
-		<?php }?>
+		
 	</form>
 
 	

@@ -16,6 +16,28 @@
     <hr>
     <p><a href="inserir.php">Inserir novo aluno</a></p>
 
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Primeira nota</th>
+                <th>Segunda Nota</th>
+                <th>Media</th>
+                <th>Situação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+            </tr>
+            <tr>
+                
+            </tr>
+        </tbody>
+    </table>
+
+
+
    <!-- Aqui você deverá criar o HTML que quiser e o PHP necessários
 para exibir a relação de alunos existentes no banco de dados.
 
