@@ -40,23 +40,23 @@
 	    <input value="<?=$listarAluno['nome']?>" type="text" name="nome" id="nome" required></p>
         
         <p><label for="primeira">Primeira nota:</label>
-	    <input value="<?=$listarAluno['primeiraNota']?> name="primeiraNota" type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
+	    <input value="<?=$listarAluno['primeiraNota']?>" name="primeiraNota" type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input value="<?=$listarAluno['segundaNota']?> name="segundaNota" type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
+	    <input value="<?=$listarAluno['segundaNota']?>" name="segundaNota" type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição.
         Usado apenas para exibição do valor da média -->
             <label for="media">Média:</label>
-            <input value="<?=$listarAluno['media']?> name="media" type="number" id="media" step="0.1" min="0.0" max="10" readonly disabled>
+            <input value="<?=$listarAluno['media']?>" name="media" type="number" id="media" step="0.1" min="0.0" max="10" readonly disabled>
         </p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição 
         Usado apenas para exibição do texto da situação -->
             <label for="situacao">Situação:</label>
-	        <input value="<?=$listarAluno['situacao']?> type="text" name="situacao" id="situacao" readonly disabled>
+	        <input value="<?=$listarAluno['situacao']?>" type="text" name="situacao" id="situacao" readonly disabled>
         </p>
 	    
         <button name="atualizar">Atualizar dados do aluno</button>
