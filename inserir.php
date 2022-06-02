@@ -63,7 +63,7 @@
 
 	
     <hr>
-    <p><a href="index.php">Voltar ao início</a></p>
+    <p><i class="bi bi-arrow-left-circle"></i><a href="index.php">Voltar ao início</a></p>
 </div>
 
 </body>

@@ -14,14 +14,16 @@
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         
         <link href="css/style.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     </head>
 <body>
 <div class="container">
     <h1>Lista de alunos</h1>
     <hr>
-    <p><a href="inserir.php">Inserir novo aluno</a></p>
+    <p><a class="btn btn-primary" href="inserir.php"><i class="bi bi-plus-circle"> </i>Inserir novo aluno</a></p>
 
-    <table id="rborder" class="table table-primary table-hover text-center  shadow-lg p-3 mb-5 bg-body rounded">
+    <table class="border border-5 rounded-5 table table-primary table-hover text-center  shadow-lg p-3 mb-5 bg-body rounded">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -43,13 +45,15 @@
 
                     <!-- botões para atualizar e excluir -->
                     <td>
-                        <a href="atualizar.php?id=<?=$visualizarAluno["id"]?>"> <!-- Criação de link dinamico  -->
-                            Atualizar
+                        <a class="btn btn-primary" href="atualizar.php?id=<?=$visualizarAluno["id"]?>"> <!-- Criação de link dinamico  -->
+                            <i class="bi bi-arrow-repeat"> </i>Atualizar
                         </a>
                     </td>
 
                     <td>
-                        <a class="excluir" href="excluir.php?id=<?=$visualizarAluno["id"]?>">Excluir</a>
+                        <a class="excluir btn btn-danger" href="excluir.php?id=<?=$visualizarAluno["id"]?>">
+                            <i class="bi bi-trash3"> </i>Excluir
+                        </a>
                     </td>
                 </tr>
             <?php } ?>
@@ -65,7 +69,7 @@ Obs.: não se esqueça de criar também os links dinâmicos para
 as páginas de atualização e exclusão. -->
 
 
-    <p><a href="index.php">Voltar ao início</a></p>
+    <p><a class="btn btn-success" href="index.php"><i class="bi bi-arrow-left-circle"></i> Voltar ao início</a></p>
 </div>
 
 <script src="js/confirmar.js"></script>
