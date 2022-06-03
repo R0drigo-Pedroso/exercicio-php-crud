@@ -27,12 +27,18 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cadastrar um novo aluno - Exercício CRUD com PHP e MySQL</title>
-<link href="css/style.css" rel="stylesheet">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Cadastrar um novo aluno - Exercício CRUD com PHP e MySQL</title>
+		
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        
+        <link href="css/style.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+	</head>
 <body>
 <div class="container">
 	<h1>Cadastrar um novo aluno </h1>
@@ -57,13 +63,13 @@
 				<input type="number" name="segunda"  id="segunda" step="0.1" min="0.0" max="10" required>
 			</p>
 	
-			<button type="submit" name="inserir">Cadastrar aluno</button>
+			<button class="btn btn-primary"type="submit" name="inserir"><i class="bi bi-clipboard2-check me-2"></i>Cadastrar aluno</button>
 		
 	</form>
 
 	
     <hr>
-    <p><i class="bi bi-arrow-left-circle"></i><a href="index.php">Voltar ao início</a></p>
+    <p><a class="btn btn-success" href="index.php"><i class="bi bi-arrow-left-circle me-2"></i> Voltar ao início</a></p>
 </div>
 
 </body>

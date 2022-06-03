@@ -16,8 +16,3 @@ a {
 h2 a { font-size: 0.9rem;}
 
 a:hover, a:focus { text-decoration: underline;}
-
-
-#rborder { 
-    border-radius: 10px !important;
-}

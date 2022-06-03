@@ -30,13 +30,17 @@
 
 
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Atualizar dados - Exercício CRUD com PHP e MySQL</title>
-<link href="css/style.css" rel="stylesheet">
-</head>
+<html lang="pt-br" ng-app>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Atualizar dados - Exercício CRUD com PHP e MySQL</title>
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        
+        <link href="css/style.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    </head>
 <body>
 <div class="container">
     <h1>Atualizar dados do aluno </h1>
@@ -66,17 +70,18 @@
         <!-- Campo somente leitura e desabilitado para edição 
         Usado apenas para exibição do texto da situação -->
             <label for="situacao">Situação:</label>
-	        <input value="<?=$listarAluno['situacao']?>" type="text" name="situacao" id="situacao" readonly disabled>
+	        <input value="<?=$listarAluno['situacao']?>" type="text" ng-model="situação" name="situacao" id="situacao" readonly disabled>
         </p>
 	    
-        <button name="atualizar">Atualizar dados do aluno</button>
+        <button class="btn btn-primary" name="atualizar"><i class="bi bi-clipboard2-check me-2"></i>Atualizar dados do aluno</button>
 	</form>    
     
     <hr>
-    <p><a href="visualizar.php">Voltar à lista de alunos</a></p>
+    <p><a class="btn btn-success" href="visualizar.php"><i class="bi bi-arrow-left-circle me-2"></i>Voltar à lista de alunos</a></p>
 
 </div>
 
 
+    <script src="js/angular.min.js"></script>
 </body>
 </html>
