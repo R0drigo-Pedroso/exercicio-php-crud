@@ -63,7 +63,7 @@
 				<input type="number" name="segunda"  id="segunda" step="0.1" min="0.0" max="10" required>
 			</p>
 	
-			<button class="btn btn-primary"type="submit" name="inserir"><i class="bi bi-clipboard2-check me-2"></i>Cadastrar aluno</button>
+			<button class="btn btn-primary" type="submit" name="inserir"><i class="bi bi-clipboard2-check me-2"></i>Cadastrar aluno</button>
 		
 	</form>
 
