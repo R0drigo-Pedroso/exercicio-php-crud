@@ -1,5 +1,5 @@
 <?php
-	require_once '../exercicio-php-crud/src/funcoes-alunos.php';
+	require_once 'src/funcoes-alunos.php';
 
 	if(isset ($_POST['inserir'])){
 		$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
