@@ -1,9 +1,14 @@
 <?php
 
     $servidor = "localhost";
-    $usuario = "root";
-    $senha = "";
-    $banco = "crud_escola_rodrigo";
+    $usuario ="webmaio1_crud_er";
+    $senha = "Er582700@22";
+    $banco ="webmaio1_crud_escola_rodrigo"
+
+    // $servidor = "localhost";
+    // $usuario = "root";
+    // $senha = "";
+    // $banco = "crud_escola_rodrigo";
 
 
     try{
